@@ -1,6 +1,14 @@
-from flask import Flask ,render_template , url_for
-from flask import request
+from flask import Flask ,render_template , url_for,flash,redirect
+from flask import request,session
+from forms import Formname,LoginForm
+
+
+
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'sdfghjkllkjhgfdfghjkkjhgfddfgytrk'
+
+
 #dictionary
 posts = [
     {
@@ -32,6 +40,23 @@ def home():
 @app.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+@app.route("/register",methods=['POST','GET'])
+def register():
+    formpage=Formname()
+    if formpage.validate_on_submit():
+        return redirect(url_for('home'))
+    return render_template('register.html', formpage = formpage , title='Register Page')
+
+
+@app.route("/login",methods=['POST','GET'])
+def login():
+    formpage=LoginForm()
+    if formpage.validate_on_submit():
+        # TODO do query db for login or use login from flask
+        session['email']=formpage.email.data
+    return render_template('login.html', formpage = formpage, email=session.get('email',False) , title='Login Page')
+
 
 @app.route('/bro')
 def bro():

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+    <div class="content-section">
+            <form method="POST" action="">
+            {{  formpage.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="border-botton mb-4">Registration for Information System Portal</legend>
+                <div class="form-group ">
+                    {{ formpage.name.label(class="form-control-lable") }}
+                    {% if formpage.name.errors %}
+                        {{ formpage.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                        {% for eroor in form.name.errors %}
+                            <span>{{ eroor }}</span>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                    {{ formpage.name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ formpage.student_no.label(class="form-control-lable") }}
+                    {% if formpage.student_no.errors %}
+                        {{ formpage.student_no(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                        {% for eroor in formpage.student_no.errors %}
+                            <span>{{ eroor }}</span>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                    {{ formpage.student_no(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group">
+                    {{ formpage.email.label(class="form-control-lable") }}
+                    {% if formpage.email.errors %}
+                        {{ formpage.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                        {% for eroor in formpage.email.errors %}
+                            <span>{{ eroor }}</span>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                    {{ formpage.email(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group">
+
+                    {{ formpage.password.label(class="form-control-lable") }}
+                    {% if formpage.password.errors %}
+                        {{ formpage.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                        {% for eroor in formpage.password.errors %}
+                            <span>{{ eroor }}</span>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                    {{ formpage.password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ formpage.password_con.label(class="form-control-lable") }}
+                    {% if formpage.password_con.errors %}
+                        {{ formpage.password_con(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                        {% for eroor in formpage.password_con.errors %}
+                            <span>{{ eroor }}</span>
+                        {% endfor %}
+                        </div>
+                    {% else %}
+                    {{ formpage.password_con(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group ">
+                    {{ formpage.submit(class="btn btn-outline-info") }}
+                </div>
+
+            </fieldset>
+
+        </form>
+</div>
+
+
+{% endblock content %}
