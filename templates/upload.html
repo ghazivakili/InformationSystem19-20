@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{#{% for student in students %}#}
+{#    {{ student.name }}#}
+{#    {{ student.role.name }}#}
+{#    {{ student.email }}#}
+{#{% endfor %}#}
+
+
+
+        <form method="post" enctype="multipart/form-data">
+            {{ formupload.hidden_tag() }}
+            {{ formupload.file.label }}
+            {{ formupload.file }}
+            {{ formupload.upload }}
+
+        </form>
+{% endblock content %}

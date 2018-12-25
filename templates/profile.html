@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for student in students %}
+    {{ student.name }}
+    {{ student.role.name }}
+    {{ student.email }}
+{% endfor %}
+
+{% endblock content %}
