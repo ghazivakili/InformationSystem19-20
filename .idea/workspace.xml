@@ -231,8 +231,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="EMAIL_USERNAME" value="ghazivakili@mail.com" />
-        <env name="EMAIL_PASSWORD" value="mohamadela13" />
+        <env name="EMAIL_USERNAME" value="*******@mail.com" />
+        <env name="EMAIL_PASSWORD" value="********" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/../../example03/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="" />
