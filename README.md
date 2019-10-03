@@ -48,14 +48,3 @@ then you need to run server by using this line:
 python2.7 -m flask run
 ``
 
-## Install the application
-you need to install requirements by using this line code in your python
-
-python version is 2.7
-
-``pip install -r requirements.txt ``
-
-or
-
-``pip2 install -r requirements.txt ``
- 
