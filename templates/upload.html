@@ -9,11 +9,26 @@
 
 
 
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" action="">
             {{ formupload.hidden_tag() }}
             {{ formupload.file.label }}
             {{ formupload.file }}
             {{ formupload.upload }}
 
         </form>
+    <div class="container">
+    <div class="card-columns">
+            {% for file in filelist %}
+                            <div class="card" style="width: 15rem">
+                                <img class="upload-img" src='{{ url_for("static",filename=file) }} ' class="card-img-top" >
+                                <div class="card-body">
+
+
+                             </div>
+                           </div>
+            {% endfor %}
+    </div>
+    </div>
 {% endblock content %}
+
+

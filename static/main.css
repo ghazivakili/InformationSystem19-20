@@ -75,6 +75,12 @@ a.article-title:hover {
   margin-bottom: 16px;
 }
 
+.upload-img {
+  height: 300px;
+
+}
+
+
 .account-heading {
   font-size: 2.5rem;
 }

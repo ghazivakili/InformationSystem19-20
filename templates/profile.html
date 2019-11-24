@@ -3,8 +3,9 @@
 {% block content %}
 {% for student in students %}
     {{ student.name }}
-    {{ student.role.name }}
-    {{ student.email }}
+    {{ student.role.name }},
+    {{ student.email }},
+    <br>
 {% endfor %}
 
 {% endblock content %}

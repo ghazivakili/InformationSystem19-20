@@ -4,7 +4,7 @@
 <h1>{{ title }}</h1>
  <div class="content-section">
     {% if email %}
-        <p>You have been logged in with {{ email }}</p>
+        <p>You have been logged in with {{ email }} user ID is {{ session.get('id') }}</p>
     {% else %}
     <form method="POST">
         {{ formpage.hidden_tag() }}

@@ -1,10 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField,PasswordField,ValidationError,FileField
+from wtforms import StringField,SubmitField,PasswordField,ValidationError,FileField,RadioField
 from wtforms.validators import Length,Email,EqualTo,DataRequired,regexp
 from app import Student,Role
 
 class Formname(FlaskForm):
     name = StringField('Name:', validators=[DataRequired(), Length(min=2, max=20)])
+    usertype=RadioField('You are', choices = [('Student','Student'),('Teacher','Teacher')])
     student_no = StringField('Student No.:', validators=[DataRequired(), Length(min=2, max=10)])
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -20,6 +21,8 @@ class Formname(FlaskForm):
         st = Student.query.filter_by(email=email.data).first()
         if st:
             raise ValidationError('You have been registerd with email or ...')
+
+
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email(),Length(min=4,max=50)])
